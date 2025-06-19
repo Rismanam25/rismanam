@@ -1,0 +1,262 @@
+{% load static %}
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RisManam</title>
+    <meta name="description" content="RisManam offers affordable, judgment-free emotional support through real conversations. Talk safely, anytime.">
+    <meta name="keywords" content="mental health, emotional support, online therapy alternative, video talk, judgment-free conversation">
+    <meta name="author" content="RisManam">
+    <meta property="og:title" content="RisManam – Talk. Be Heard. Heal.">
+    <meta property="og:description" content="Affordable, private support through real human conversations.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+    <meta property="og:url" content="https://rismanam.org">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="{% static 'Risapp/css/style.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--dark);">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">RisManam</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Listeners</a>
+                </li>
+                <li class="nav-item">
+                    {% if user.is_authenticated %}
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                    {% else %}
+                        <a class="nav-link" href="{% provider_login_url 'google' %}">Login</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section py-5">
+    <div class="container" data-aos="zoom-in">
+        <div class="row">
+            <div class="col-md-6 text-md-start text-center text-white">
+                <h1 class="display-4 fw-bold mb-4">Find calm and clarity with our supportive community</h1>
+                <p class="lead mb-5">Connect with trusted listeners for private, judgment-free support</p>
+            </div>
+            <div class="col-md-6 mb-4 mb-md-0">
+                <img src="{% static 'Risapp/images/banner.png' %}" alt="banner" class="img-fluid rounded shadow">
+            </div>
+        </div>
+    </div>
+</section>
+
+ <section class="py-5 bg-white" id="about">
+  <div class="container" data-aos="zoom-in">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-8">
+        <h2 class="mb-4 fw-bold">About Us</h2>
+         <p>
+          At <strong>RisManam</strong>, we believe everyone deserves a space to be heard — no judgment, no pressure.
+        </p>
+        <p>
+          We're a supportive community built to help you talk through stress, emotions, or just your day — with someone who truly listens. We're not therapists, and we're not here to give advice. We're here to create a safe, private, and comfortable space where you can express yourself freely.
+        </p>
+        <p>
+          Whether you're feeling overwhelmed, anxious, or just need someone to talk to — we’re here for you.
+        </p>
+        <p>
+          We're a small startup with a big heart, working to make emotional support more human, more accessible, and more affordable — one meaningful conversation at a time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 ourmission" id="mission">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="mb-4 fw-bold text-center">Our Mission</h2>
+    <div class="row">
+      <div class="col-md-6 mb-4" style="padding-top: 45px;">
+        <p>
+          To make emotional support simple, affordable, and stigma-free for everyone — no matter where they are or what they're going through.
+        </p>
+        <p>
+          We’re building a safe space where people can have honest, judgment-free conversations with trained listeners who truly care. Whether it's stress, loneliness, or just needing someone to talk to — we're here for that.
+        </p>
+        <p>
+          Our mission is to empower people to feel heard, supported, and emotionally stronger — one mindful talk at a time.
+        </p>
+      </div>
+      <div class="col-md-5 mb-4 mb-4 mb-md-0">
+           <img src="{% static 'Risapp/images/mission.png' %}" alt="banner" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 ourmission" id="vision">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="mb-4 fw-bold text-center">Our Vision</h2>
+    <div class="row">
+        <div class="col-md-5 mb-4 mb-md-0">
+           <img src="{% static 'Risapp/images/vision.png' %}" alt="banner" class="img-fluid rounded">
+      </div>
+      <div class="col-md-7 pt-md-5 text-center">
+        <p>
+          Our vision is to create a world where emotional support is as normal and accessible as talking to a friend — anytime, anywhere.
+        </p>
+        <p>
+          We imagine a future where seeking a calm, understanding conversation isn’t seen as weakness — but as strength. A future where more people feel connected, seen, and emotionally balanced.
+        </p>
+        <p>
+          Through technology and community, we aim to build a safe haven where anyone can reach out, breathe a little easier, and feel a little lighter — one mindful convo at a time.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how-it-works">
+    <div class="container" data-aos="zoom-in">
+  <h2 class="mb-4 fw-bold text-center">How It Works</h2>
+  <div class="how">
+      <div class="hcard">
+        <i class="fas fa-user-circle"></i>
+        <h3>Sign Up</h3>
+        <p>Create a free account in just a few clicks.</p>
+      </div>
+      <div class="hcard">
+        <i class="fas fa-users"></i>
+        <h3>Browse Listeners</h3>
+        <p>Explore trained, compassionate listeners and find someone you connect with.</p>
+      </div>
+      <div class="hcard">
+        <i class="fas fa-wallet"></i>
+        <h3>Buy Credits</h3>
+        <p>Purchase affordable credits to start meaningful conversations.</p>
+      </div>
+      <div class="hcard">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Start a Call</h3>
+        <p>Use your credits to begin a secure, real-time audio or video conversation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 ourmission">
+  <div class="container" data-aos="zoom-in">
+    <h2 class="text-center mb-5 fw-bold">Why RisManam?</h2>
+    <div class="row text-center g-4">
+      <div class="col-md-3">
+        <div class="hcard">
+          <i class="fas fa-user-friends"></i>
+          <h5>Real People, Real Talk</h5>
+          <p>You're not talking to bots — you're heard by real, kind humans.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="hcard">
+          <i class="fas fa-shield-alt"></i>
+          <h5>Safe & Private</h5>
+          <p>No judgment. No exposure. Just a safe space to speak your heart.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="hcard">
+          <i class="fas fa-coins"></i>
+          <h5>Pay with Credits</h5>
+          <p>Use simple credits — just 1 credit per 15-minute session.</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="hcard">
+          <i class="fas fa-clock"></i>
+          <h5>On Your Time</h5>
+          <p>Connect when you want — no appointments needed, Anytime support.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container text-center" data-aos="zoom-in">
+    <h2 class="fw-bold mb-4">What You Get with a Credit</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="hcard">
+          <i class="fas fa-video fa-2x  mb-3"></i>
+          <h5>Video/Audio Call</h5>
+          <p>Talk to a real human — voice or video, your choice.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="hcard">
+          <i class="fas fa-lock fa-2x mb-3"></i>
+          <h5>Private & Safe</h5>
+          <p>100% confidential. No exposure. Safe and Secure Calls</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="hcard">
+          <i class="fas fa-coins fa-2x  mb-3"></i>
+          <h5>One Credit = One Session</h5>
+          <p>Use credits only when you talk. No hidden costs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="popup-cta" class="modal fade" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content gradient-bg text-white text-center">
+        <div class="modal-header border-0">
+        <h5 class="modal-title w-100 fw-bold">Welcome to RisManam</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h2 class="fw-bold mb-3">Ready to Feel Heard?</h2>
+        <p class="mb-4">Join now — your first credit gets you a meaningful 15-minute talk.</p>
+        <a href="/signup" class="btn btn-rismanam fw-bold px-4">Get Started</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="py-4 text-white footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>RisManam</h5>
+                <p>Affordable emotional support through compassionate listening.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="small mb-0"> 2025 Rismanam.org Not a medical service.</p>
+                <p class="small mb-0"><a href="/privacy" class="text-white">Privacy Policy</a> | <a href="/terms" class="text-white">Terms</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="{% static 'Risapp/js/script.js' %}" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>

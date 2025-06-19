@@ -1,0 +1,109 @@
+:root {
+  --dark-teal: #004f4f;
+  --medium-teal: #009f9a;
+  --light-teal: #73c7c7;
+  --light-blue: #d6e4e1;
+  --sand: #d4a291;
+  --brown: #f5d1c8;
+  --text-dark: #333;
+}
+
+body {
+  color: var(--text-dark);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.hero-section {
+  background: linear-gradient(to bottom right, var(--medium-teal), var(--light-teal), var(--light-blue), var(--sand));
+}
+
+.navbar {
+  background-color: var(--dark-teal) !important;
+}
+
+h2 {
+  color: var(--dark-teal) !important;
+}
+
+#about {
+  background: #f8f9fa;
+}
+
+#about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.ourmission{
+	background-color: var(--light-blue);
+}
+
+@media (max-width: 768px) {
+  #vision .row {
+    flex-direction: column-reverse;
+  }
+}
+#how-it-works{
+	padding: 60px 20px; 
+	background: white; 
+	text-align: center;
+}
+
+.how{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 30px; 
+	max-width: 1000px; 
+	margin: 0 auto;
+}
+.hcard{
+	flex: 1 1 200px; 
+	background: white; 
+	border-radius: 12px; 
+	padding: 30px; 
+}
+.hcard h3{
+    font-size: 1.2em; 
+    color: #1d6e6e;
+}
+
+i{
+	font-size: 40px;
+	color: #1d6e6e; 
+	margin-bottom: 15px;
+}
+
+.gradient-bg {
+  background: linear-gradient(to bottom right, var(--medium-teal), var(--light-teal), var(--light-blue), var(--sand));
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+}
+
+.btn-close-white {
+  filter: invert(1);
+}
+
+.btn-rismanam {
+  background-color: var(--dark-teal) !important;
+  color: white !important;
+  border: none;
+}
+
+.btn-rismanam:hover {
+  background-color: white !important; 
+  color: var(--dark-teal)  !important;
+}
+
+/* Responsive tweaks (optional) */
+@media (max-width: 576px) {
+  .modal-content {
+    padding: 1.5rem;
+  }
+}
+
+footer {
+  background-color:  var(--dark-teal);
+  color: white;
+}
+
